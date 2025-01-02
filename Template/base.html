@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body class="bg-zinc-100">
+    <!-- navbar for base file -->
+    <nav class="w-full h-16 bg-[#0C2D48] flex justify-between items-center px-4 md:px-4 text-white font-bold">
+        <!-- Logo Part -->
+        <div class="text-2xl "><i class="fa-solid fa-house-chimney"></i>ouse Rentals</div>
+        <div class="md:flex items-center">
+            <!-- user options -->
+            <ul class="md:flex hidden font-semibold">
+                <li class="mx-[10px] cursor-pointer hover:font-bold hover:opacity-95 opacity-75"> For Tenants </li>
+                <li class="mx-[10px] cursor-pointer hover:font-bold hover:opacity-95 opacity-75"> For Owners </li>
+                <li class="mx-[10px] cursor-pointer hover:font-bold hover:opacity-95 opacity-75"> For Dealers / Builders
+                </li>
+            </ul>
+            <!-- post property -->
+            <div class="bg-white text-black px-5 py-2 rounded-lg cursor-pointer mx-[10px]">Post Property <span
+                    class="bg-green-700 text-white mx-1 px-3 py-1 rounded-lg text-[12px]">FREE</span>
+            </div>
+            <!-- contact us -->
+            <div class="mx-[10px] cursor-pointer">Contact Us</div>
+            <!-- profile part D will be replaced by user's first name or user's profile picture -->
+            <div class="bg-green-300 rounded-full px-3.5 py-2 cursor-pointer mx-[10px] text-green-800 text-[12px]">D
+            </div>
+            <!-- hamburger icon -->
+            <div><i class="fa-solid fa-bars cursor-pointer mx-[10px] text-xl"></i></div>
+        </div>
+    </nav>
+    <!-- side bar for base file -->
+
+    <!-- content will be rendered here  -->
+    <div th:replace="${content}"></div>
+
+    <!-- java script -->
+    <script th:src="@{/js/script.js}"></script>
+
+</body>
+
+</html>
