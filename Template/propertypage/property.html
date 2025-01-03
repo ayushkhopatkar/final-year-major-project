@@ -20,7 +20,7 @@
   </head>
   <body>
     <nav
-      class="w-full h-[72px] bg-[#145da0] flex justify-between px-4 items-center md:px-5 shadow-sm shadow-gray-500 sticky top-0"
+      class="w-full h-[72px] bg-[#145da0] flex justify-between px-4 items-center md:px-5 shadow-sm shadow-gray-500 sticky top-0 z-10 "
     >
       <!-- House rental text -->
       <div class="text-2xl text-white font-bold">
@@ -60,48 +60,19 @@
       <!-- property+user+dropdown menu -->
       <div class="flex">
         <!-- Property button -->
-        <div
-          class="bg-white text-black px-5 py-2 rounded-lg cursor-pointer mx-[10px]"
-        >
-          Post Property
-          <span
-            class="bg-green-700 text-white mx-1 px-3 py-1 rounded-lg text-[12px]"
-            >FREE</span
-          >
-        </div>
+        <div class="bg-white text-black px-3 py-2 rounded-lg cursor-pointer my-1 mx-[10px]">Post Property <span
+          class="bg-green-700 text-white  ml-5 my-1 px-3 py-1 rounded-lg text-[12px]">FREE</span>
+  </div>
+  <!-- contact us -->
+  <div class="mx-[10px] py-3   text-white font-bold cursor-pointer">Contact Us</div>
+  <!-- profile part D will be replaced by user's first name or user's profile picture -->
+  <div class="bg-green-300  h-[36px] w-[34px]  mt-2 rounded-full px-3 py-3 cursor-pointer mx-[10px] text-green-800 text-[12px]">D
+  </div>
+  <!-- hamburger icon -->
+  <div><i class="fa-solid fa-bars mt-3   text-white font-bold cursor-pointer mx-[10px] text-xl"></i></div>
+</div>
 
-        <!-- user icon and name -->
-        <button
-          id="dropdownAvatarNameButton"
-          data-dropdown-toggle="dropdownAvatarName"
-          class="flex justify-end text-sm mt-1 font-medium text-[#ebebe8] rounded-full hover:text-blue-600 dark:hover:text-blue-500 md:me-0 focus:ring-4 focus:ring-gray-100"
-          type="button"
-        >
-          <span class="sr-only">Open user menu</span>
-          <img
-            class="w-8 h-8 me-2 rounded-full"
-            src="Passport_Photograph.jpg"
-            alt="user photo"
-          />
-          Ayush Khopatkar
-
-          <!-- Dropdown icon -->
-          <svg
-            class="w-3 h-2.5 ms-3 mt-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 6"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m1 1 4 4 4-4"
-            />
-          </svg>
-        </button>
+       
 
         <!-- Dropdown menu for future need to use javascript -->
         <div
@@ -148,5 +119,286 @@
         </div>
       </div>
     </nav>
+    <!-- NAVBAR ends here  -->
+  
+
+     <!-- Left Sidebar Border -->
+    <div class="flex h-full">
+      <!-- Left Sidebar -->
+
+      <div class="w-[360px]  bg-gray-100 text-white flex flex-col">
+        <div class="p-4 text-xl font-bold text-gray-900 h-full bg-white m-4 ">
+       <div class="mb-4 flex justify-center text-2xl">Filters</div>
+
+         
+      
+          <!-- Verified Properties toogle button -->
+          <div class="mt-10 mb-5">
+            <div class="flex items-center justify-between font-medium text-lg">Verified Properties
+              <label for="toogleTwo" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                <div class="relative">
+                    <input   id="toogleTwo"  type="checkbox"  class="peer sr-only" />
+                     <div class="h-3 rounded-full shadow-inner bg-gray-300 dark:bg-dark-2 w-10" ></div>
+                     <div  class="absolute left-0 transition bg-[#145da0] rounded-full dot shadow-switch-1 dark:bg-dark-4 -top-1 h-5 w-5 peer-checked:translate-x-full peer-checked:bg-primary" ></div>
+                    </div>
+                  </label>
+            </div>
+          </div>
+      
+          <hr />
+
+          <!-- Budget -->
+          <div class="my-4">
+            <div class="flex items-center justify-between">
+              <label class="font-medium text-lg text-gray-900">Budget</label>
+              <button class="text-gray-900 text-base "><i class="fa-solid fa-angle-down "></i></button>
+            </div>
+            <!-- Slider -->
+            <div class="mt-4">
+              <div class="flex items-center justify-between text-gray-600 text-xs font-normal">
+                <span>0</span>
+                <span>100+ Crores</span>
+              </div>
+              <input id="small-range" type="range"  class="w-full h-1 mb-6 bg-[#145da0] rounded-lg appearance-none cursor-pointer range-sm">
+
+            </div>
+            <!-- Budget Dropdowns -->
+            <div class="mt-4 flex justify-between space-x-4">
+              <select class="w-full border border-gray-300 rounded-md p-2 text-xs font-medium text-gray-600 focus:ring-blue-400 focus:border-blue-400">
+                <option>Min Budget</option>
+                <option>10 Lakh</option>
+                <option>20 Lakh</option>
+              </select>
+              <select class="w-full border border-gray-300 rounded-md p-2 text-xs font-medium text-gray-600 focus:ring-blue-400 focus:border-blue-400">
+                <option>Max Budget</option>
+                <option>50 Lakh</option>
+                <option>1 Crore</option>
+              </select>
+            </div>
+          </div>
+      
+          <!-- Type of Property -->
+          <div class="my-10">
+            <div class="flex items-center justify-between">
+              <label class="font-medium text-lg text-gray-900">Type of property</label>
+              <button class="text-gray-900 text-base"><i class="fa-solid fa-angle-down"></i></button>
+            </div>
+            <!-- Property Type -->
+            <div class="mt-4">
+              <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm ">
+                + Residential Apartment
+              </button>
+              <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm">
+                + Studio Apartment
+              </button>
+              <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm">
+                + Row House
+              </button>
+              <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm">
+                + Independent House/ Bunglow
+              </button>
+              <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm">
+                + Farmhouse
+              </button>          
+            </div>
+          </div>
+
+          <!-- Area -->
+          <div class="my-10">
+            <div class="flex items-center justify-between">
+              <label class="font-medium text-lg text-gray-900">Budget</label>
+              <button class="text-gray-900 text-base"><i class="fa-solid fa-angle-down"></i></button>
+            </div>
+            <!--  Area Slider -->
+            <div class="mt-4">
+              <div class="flex items-center justify-between font-normal text-gray-600 text-xs">
+                <span>100 sq ft</span>
+                <span>4000 sq ft</span>
+              </div>
+              <input id="small-range" type="range"  class="w-full h-1 mb-6 bg-[#145da0] rounded-lg appearance-none cursor-pointer range-sm">
+
+            </div>
+            <!-- Budget Dropdowns -->
+            <div class="mt-4 flex justify-between space-x-4">
+              <select class="w-full border border-gray-300 rounded-md p-2 text-xs font-medium text-gray-600 focus:ring-blue-400 focus:border-blue-400">
+                <option>Min Area</option>
+                <option>100  sq ft</option>
+                <option>200 sq ft</option>
+              </select>
+              <select class="w-full border border-gray-300 rounded-md p-2 text-xs font-medium text-gray-600 focus:ring-blue-400 focus:border-blue-400">
+                <option>Max Area</option>
+                <option>3800 sq ft</option>
+                <option>4000 sq ft</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- No of Bedrooms -->
+          <div class="my-10">
+            <div class="flex items-center justify-between">
+              <label class="font-medium text-lg text-gray-900">No Of Bedrooms</label>
+              <button class="text-gray-900 text-base"><i class="fa-solid fa-angle-down"></i></button>
+            </div>
+            <!-- Bedrooms -->
+            <div class="mt-4  flex  flex-wrap">
+              <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+                + 1RK
+              </button>
+              <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+                + 1 BHK
+              </button>
+              <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+                + 2 BHK
+              </button>
+              <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+                + 3 BHK
+              </button>
+              <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+                + 4 BHK
+              </button>          
+            </div>
+          </div>
+
+        <!-- Available For -->
+        <div class="my-10">
+          <div class="flex items-center justify-between">
+            <label class="font-medium text-lg text-gray-900">Available For</label>
+            <button class="text-gray-900 text-base"><i class="fa-solid fa-angle-down"></i></button>
+          </div>
+          <!-- Availability -->
+          <div class="mt-4  flex  flex-wrap">
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Family
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Single Men
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Single Women
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Sharing
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Tenants with company Lease
+            </button>                 
+          </div>
+        </div>  
+
+        <!-- Furnishing Status -->
+        
+        <div class="my-10">
+          <div class="flex items-center justify-between">
+            <label class="font-medium text-lg text-gray-900">Furnishing Status</label>
+            <button class="text-gray-900 text-base"><i class="fa-solid fa-angle-down"></i></button>
+          </div>
+          <!-- Status -->
+          <div class="mt-4  flex  flex-wrap">
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Furnished
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Semi Furnished
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Unfurnished
+            </button>
+                           
+          </div>
+        </div> 
+
+          <!-- Posted By -->
+        <div class="my-10">
+          <div class="flex items-center  justify-between">
+            <label class="font-medium text-lg text-gray-900">Posted By</label>
+            <button class="text-gray-900 text-base"><i class="fa-solid fa-angle-down"></i></button>
+          </div>
+          <!-- By -->
+          <div class="mt-4  flex  flex-wrap">
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Owner
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Dealer
+            </button>
+
+          </div>
+        </div> 
+
+               <!-- Amenites -->
+        <div class="my-10">
+          <div class="flex items-center justify-between">
+            <label class="font-medium text-lg text-gray-900">Amenities</label>
+            <button class="text-gray-900 text-base"><i class="fa-solid fa-angle-down"></i></button>
+          </div>
+          <!--Types  -->
+          <div class="mt-4  flex  flex-wrap">
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Parking
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Lift
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Gymansium
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Swimming Pool
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + Pet Friendly
+            </button>        
+          </div>
+        </div> 
+
+        <!-- Age Of property -->
+        <div class="my-10">
+          <div class="flex items-center justify-between">
+            <label class="font-medium text-lg text-gray-900">Age Of Property</label>
+            <button class="text-gray-900 text-base"><i class="fa-solid fa-angle-down"></i></button>
+          </div>
+          <!--  Years -->
+          <div class="mt-4  flex  flex-wrap">
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + 0 - 5 Years
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + 6 - 10 Years
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + 10+ Years
+            </button>
+            <button class="flex items-center text-gray-600 font-normal border border-gray-200 bg-white py-1  px-2 my-1 rounded-2xl text-sm mx-1">
+              + 20 + years
+            </button>      
+          </div>
+        </div> 
+                           
+         
+        
+
+
+
+
+        </div>
+      </div>
+
+      
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6">
+        <h1 class="text-2xl font-bold text-gray-800">Main Content Area</h1>
+        <p class="mt-4 text-gray-600"></p>
+      </main>
+
+      
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white p-4 bottom-0">
+      <div class="container mx-auto text-center text-sm">
+        &copy; 2025 Your Website Name. All Rights Reserved.
+      </div>
+    </footer>
   </body>
 </html>
