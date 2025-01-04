@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="bg-gray-100 flex items-center justify-center h-screen">
+      <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">
+          User Details Form
+        </h2>
+        <form action="#" method="POST" class="space-y-4">
+          <!-- You Are -->
+          <div>
+            <label for="you-are" class="block text-sm font-medium text-gray-700"
+              >You are</label
+            >
+            <input
+              type="text"
+              id="you-are"
+              name="you_are"
+              class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              placeholder="User Type"
+              required
+            />
+          </div>
+
+          <!-- Name -->
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Enter Your Name"
+              required
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700"
+              >Email ID</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Enter Your Email"
+              required
+            />
+          </div>
+
+          <!-- Phone Numbers -->
+          <div>
+            <label for="phone1" class="block text-sm font-medium text-gray-700"
+              >Phone Number</label
+            >
+            <div class="flex space-x-2">
+              <select
+                class="p-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="+91">+91 IND</option>
+              </select>
+              <input
+                type="text"
+                id="phone1"
+                name="phone1"
+                class="p-2 border flex-grow rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Enter Your Phone Number 1"
+                required
+              />
+            </div>
+            <div class="mt-2 flex space-x-2">
+              <select
+                class="p-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="+91">+91 IND</option>
+              </select>
+              <input
+                type="text"
+                id="phone2"
+                name="phone2"
+                class="p-2 border flex-grow rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Enter Your Phone Number 2"
+              />
+            </div>
+            <div class="mt-2 flex space-x-2">
+              <select
+                class="p-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="+91">+91 IND</option>
+              </select>
+              <input
+                type="text"
+                id="phone3"
+                name="phone3"
+                class="p-2 border flex-grow rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Enter Your Phone Number 3"
+              />
+            </div>
+            <div class="mt-2">
+              <label class="flex items-center">
+                <input
+                  type="checkbox"
+                  name="allow_whatsapp"
+                  class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                />
+                <span class="ml-2 text-sm text-gray-700"
+                  >Allow buyers to WhatsApp me on this number</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <!-- City -->
+          <div>
+            <lable for="city" class="block text-sm font-medium text-gray-700"
+              >Enter Your City</lable
+            >
+
+            <select
+              id="city"
+              name="city"
+              class="mt-1 p-2 w-full border rounded-lg text-base font-normal text-gray-500 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option class="" value="Enter Your City">Enter Your City</option>
+              <option value="thane-outskirts">Thane Outskirts</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="delhi">Delhi</option>
+              <!-- Add more cities as needed -->
+            </select>
+          </div>
+
+          <!-- Address -->
+          <div>
+            <label for="address" class="block text-sm font-medium text-gray-700"
+              >Address</label
+            >
+            <input
+              type="text"
+              id="address"
+              name="address"
+              class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Enter Your Address"
+              required
+            />
+          </div>
+
+          <!-- Landline Number -->
+          <div>
+            <label
+              for="landline"
+              class="block text-sm font-medium text-gray-700"
+              >Landline No</label
+            >
+            <input
+              type="text"
+              id="landline"
+              name="landline"
+              class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Enter Your Landline No"
+            />
+          </div>
+
+          <!-- Save Button -->
+          <div>
+            <button
+              type="submit"
+              class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

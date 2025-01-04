@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <title>Chatbot</title>
+  </head>
+  <body>
+    <section class="bg-gray-100 flex items-center justify-center h-screen">
+      <div
+        class="w-full max-w-sm bg-white shadow-lg rounded-lg overflow-hidden"
+      >
+        <!-- Header -->
+        <div class="bg-[#145da0] text-white p-4 flex items-center space-x-2">
+          <div
+            class="w-8 h-8 bg-[#2e8bc0] rounded-full flex items-center justify-center"
+          >
+            <span class="text-sm font-bold">HR</span>
+          </div>
+          <h2 class="text-lg font-semibold">HouseRental Assistant</h2>
+          <span class="text-sm bg-green-400 px-2 py-1 rounded-full ml-auto"
+            >Online</span
+          >
+        </div>
+
+        <!-- Chat Section -->
+        <div class="p-4 space-y-4">
+          <!-- Message from User -->
+          <div class="flex justify-end">
+            <div class="bg-blue-100 text-gray-800 p-3 rounded-lg max-w-xs">
+              User Message 1
+            </div>
+          </div>
+          <!-- Bot Message -->
+          <div class="flex space-x-2 items-start">
+            <div
+              class="w-8 h-8 bg-blue-300 rounded-full flex items-center justify-center text-sm font-bold"
+            >
+              HR
+            </div>
+            <div class="bg-gray-100 p-3 rounded-lg max-w-[260px]">
+              <p>👋 Hi User, I’m HouseRental's Assistant.</p>
+              <p>Tell me how I can help you today?</p>
+            </div>
+          </div>
+          <!-- Idle Response -->
+          <div class="flex justify-end">
+            <div class="bg-blue-100 text-gray-800 p-3 rounded-lg max-w-xs">
+              User Message
+            </div>
+          </div>
+          <!-- Bot Message -->
+          <div class="flex space-x-2 items-start">
+            <div
+              class="w-8 h-8 bg-blue-300 rounded-full flex items-center justify-center text-sm font-bold"
+            >
+              HR
+            </div>
+            <div class="bg-gray-100 p-3 rounded-lg max-w-[260px]">
+              <p>Assistant Message</p>
+            </div>
+          </div>
+          <!-- Message from User -->
+          <div class="flex justify-end">
+            <div class="bg-blue-100 text-gray-800 p-3 rounded-lg max-w-xs">
+              Explore Services
+            </div>
+          </div>
+          <!-- Bot Greeting -->
+          <div class="flex space-x-2 items-start">
+            <div
+              class="w-8 h-8 bg-blue-300 rounded-full flex items-center justify-center text-sm font-bold"
+            >
+              HR
+            </div>
+            <div class="bg-gray-100 p-3 rounded-lg max-w-[260px]">
+              <p>Assistant Message.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Section -->
+        <div class="p-4 border-t border-gray-200">
+          <form class="flex">
+            <input
+              type="text"
+              class="w-full p-2 border rounded-l-lg focus:outline-none focus:ring-2"
+              placeholder="Type a message..."
+            />
+            <button
+              type="submit"
+              class="bg-[#145da0] text-white px-4 py-2 rounded-r-lg"
+            >
+              ➤
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
