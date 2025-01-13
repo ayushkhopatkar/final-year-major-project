@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Register Page</title>
+  </head>
+  <body>
+    <div class="min-h-screen bg-zinc-50 py-40">
+      <div class="container mx-auto ">
+        <div
+          class="flex w-8/12 bg-zinc-100 rounded-xl mx-auto shadow-xl overflow-hidden items-center justify-center"
+        >
+          <!-- image -->
+          <div class="w-1/2 md:block hidden">
+            <img class="rounded-2xl mx-4 h-full" src="login.jpg" alt="" />
+          </div>
+          <!-- Register Form -->
+          <div class=" md:w-1/2 py-12 px-10">
+            <h2 class="text-3xl mb-4 ml-1 font-bold  text-[#145DA0]">Register</h2>
+            <p class="mb-4 text-[15px] mt-1 ml-1 text-[#145DA0]">Create Your Account</p>
+            <form action="#">
+              <div class="grid grid-cols-2 gap-5">
+                <input
+                  type="text"
+                  placeholder="Firstname"
+                  class="border rounded-xl py-1 px-2"
+                />
+                <input
+                  type="text"
+                  placeholder="Surname"
+                  class="border rounded-xl py-1 px-2"
+                />
+              </div>
+              <div class="mt-5">
+                <input
+                  type="text"
+                  placeholder="Email"
+                  class="border rounded-xl py-1 px-2 w-full"
+                />
+                <div class="mt-5">
+                    <input
+                      type="number"
+                      placeholder="Phone Number"
+                      class="border rounded-xl py-1 px-2 w-full"
+                    />
+                <div class="mt-5">
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      class="border rounded-xl py-1 px-2 w-full"
+                    />
+                    <div class="mt-5">
+                        <input
+                          type="password"
+                          placeholder="Confirm Password"
+                          class="border rounded-xl py-1 px-2 w-full"
+                        />
+              </div>
+
+              
+<div class="flex mt-5">
+    <div class="flex items-center">
+     
+        <label for="" class="ms-2 text-[16px] font-bold text-[#145DA0] "> User Type :</label>
+    </div>
+    <div class="flex items-center me-4 ml-3">
+        <input id="inline-radio" type="radio" value="" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+        <label for="inline-radio" class="ms-2 text-sm font-medium text-[#145DA0]">Owner</label>
+    </div>
+    <div class="flex items-center me-4"> 
+        <input id="inline-2-radio" type="radio" value="" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+        <label for="inline-2-radio" class="ms-2 text-sm font-medium text-[#145DA0]">Agent</label>
+    </div>
+    <div class="flex items-center me-4">
+        <input checked id="inline-checked-radio" type="radio" value="" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+        <label for="inline-checked-radio" class="ms-2 text-sm font-medium text-[#145DA0] ">Tenant</label>
+    </div>
+    
+</div>
+
+
+              <div class="mt-5 ml-2">
+                <input type="checkbox" class="border border-gray-400 ">
+                <span class="text-xs font-medium text-gray-700"> I accept the  <a class="text-[#145DA0] hover:underline font-semibold" href="#">Terms & Conditions</a></span>
+              </div>
+              <div class="mt-5">
+                <button class="w-full bg-[#145DA0] rounded-xl text-white py-2 hover:scale-105 duration-100"> Register</button>
+              </div>
+
+              <div class="mt-5 grid grid-cols-3 items-center text-gray-500">
+                <hr class="border-gray-500" />
+                <p class="text-center text-sm">OR</p>
+                <hr class="border-gray-500" />
+              </div>
+
+              <button
+            class="bg-white border py-2 w-full rounded-xl mt-4 flex justify-center items-center text-sm hover:scale-105 duration-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="25px"
+              viewBox="0 0 48 48"
+              class="mr-3"
+            >
+              <path
+                fill="#FFC107"
+                d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"
+              ></path>
+              <path
+                fill="#FF3D00"
+                d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"
+              ></path>
+              <path
+                fill="#4CAF50"
+                d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"
+              ></path>
+              <path
+                fill="#1976D2"
+                d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
+              ></path>
+            </svg>
+            Continue with Google
+          </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
