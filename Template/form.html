@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta 
+    name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Upload Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+
+<body class="bg-gray-100 ">
+    <nav
+      class="w-full h-[72px] bg-[#145da0] flex justify-between px-4 items-center md:px-5 shadow-sm shadow-gray-500 sticky top-0 z-10 "
+    >
+      <!-- House rental text -->
+      <div class="text-2xl text-white font-bold">
+        <i class="fa-solid fa-house-chimney"></i>ouse Rentals
+      </div>
+      <!-- user+dropdown menu -->
+      <div class="flex">
+        <!-- contact us -->
+        <div class="mx-[10px] py-3   text-white font-bold cursor-pointer">
+          Contact Us
+        </div>
+        <!-- profile part D will be replaced by user's first 
+          name or user's profile picture -->
+        <div class="bg-green-300  h-[36px] w-[34px]  mt-2 rounded-full px-3 py-3 cursor-pointer mx-[10px] text-green-800 text-[12px]">
+          D
+        </div>
+        <!-- hamburger icon -->
+        <div>
+          <i class="fa-solid fa-bars mt-3 text-white font-bold cursor-pointer mx-[10px] text-xl"></i>
+        </div>
+      </div>
+
+        <!-- Dropdown menu for future need to use javascript -->
+        <div
+          id="dropdownAvatarName"
+          class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+        >
+          <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+            <div class="font-medium">User</div>
+            <div class="truncate">
+              name@email.com</div>
+          </div>
+          <ul
+            class="py-2 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton"
+          >
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Settings</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Something</a
+              >
+            </li>
+          </ul>
+          <div class="py-2">
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+              >Sign out</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="bg-whiteflex justify-center h-full"></div>
+    <div class="p-8 rounded-lg w-full h-full flex">
+        <!-- Sidebar Stepper -->
+        <div class="w-1/4 border-r pr-4">
+            <ul class="space-y-4">
+                <li class="flex items-center space-x-2 step-item p-5" data-step="1">
+                    <div class="step-circle w-8 h-8 flex items-center justify-center rounded-full text-white font-bold">
+                        1</div>
+                    <span class="text-gray-700">Basic Details <br> step 1</span>
+                </li>
+                <li class="flex items-center space-x-2 step-item p-5" data-step="2">
+                    <div class="step-circle w-8 h-8 flex items-center justify-center rounded-full text-white font-bold">
+                        2</div>
+                    <span class="text-gray-700">Location Details <br> step 2</span>
+                </li>
+                <li class="flex items-center space-x-2 step-item p-5" data-step="3">
+                    <div class="step-circle w-8 h-8 flex items-center justify-center rounded-full text-white font-bold">
+                        3</div>
+                    <span class="text-gray-700">Property Profile <br> step 3</span>
+                </li>
+                <li class="flex items-center space-x-2 step-item p-5" data-step="4">
+                    <div
+                        class="step-circle w-8 h-8 flex items-center justify-center rounded-full text-white font-bold">
+                        4</div>
+                    <span class="text-gray-700">Photos, Videos & Voice-over <br> step 4</span>
+                </li>
+                <li class="flex items-center space-x-2 step-item p-5" data-step="5">
+                    <div class="step-circle w-8 h-8 flex items-center justify-center rounded-full text-white font-bold">
+                        5</div>
+                    <span class="text-gray-700">Other Details <br> step 5</span>
+                </li>
+            </ul>
+        </div>
+        <!-- Form Content -->
+        <div class="w-3/4 pl-8">
+            <form id="multi-step-form" action="#" method="get">
+              <!-- back button hidden at step 1 -->
+              <button 
+                type="button" id="prevBtn"
+                class="text-black rounded hidden">
+                <i class="fa-solid fa-arrow-right" 
+                style="transform: rotate(180deg);"></i> 
+                Back
+              </button>
+                <!-- Step 1 -->
+                <div class="step" id="step-1">
+                    <h2 class="text-lg font-semibold mb-4">Welcome User, Fill Out basic details</h2>
+                    <div>What kind of Property You have ?</div>
+                    <label class="block mb-2">Property Type</label>
+                    <div class="flex space-x-4 mb-4">
+                        <label class="flex items-center">
+                            <input 
+                            type="radio" 
+                            name="propertyType" 
+                            value="Flat/Apartment" class="mr-2">
+                            Flat/Apartment
+                        </label>
+                        <label class="flex items-center">
+                            <input 
+                            type="radio" 
+                            name="propertyType" 
+                            value="Chawl" class="mr-2">
+                            Chawl
+                        </label>
+                    </div>
+                </div>
+                <!-- end of step 1 -->
+                <!-- Step 2 -->
+                <div class="step hidden" id="step-2">
+                    <h2 class="text-lg font-semibold mb-4">Where is your property located?</h2>
+                      <label class="block mb-2">City</label>
+                      <input 
+                      type="text" class="w-full p-2 border rounded mb-4" 
+                      placeholder="Enter 
+                      name of city Eg. Airoli">
+
+                      <label class="block mb-2">Locality</label>
+                      <input 
+                      type="text" 
+                      class="w-full p-2 border rounded mb-4" 
+                      placeholder="Ex. Sector 17 "
+                      name="locality">
+
+                      <label class="block mb-2">Sub - Locality</label>
+                      <input 
+                      type="text" 
+                      class="w-full p-2 border rounded mb-4" 
+                      placeholder="Optional"
+                      name="sub_locality">
+
+                      <label class="block mb-2">Apartment / Society / Chawl</label>
+                      <input 
+                      type="text" 
+                      class="w-full p-2 border rounded mb-4"
+                      placeholder="Name of your Apartment Eg. Snehsagar Apartment"
+                      name="property_type">
+
+                      <label class="block mb-2">House Number</label>
+                      <input 
+                      type="text" 
+                      class="w-full p-2 border rounded mb-4" 
+                      placeholder="Optional"
+                      name="houser_number">
+
+                </div>
+                <!-- end of step 2 -->
+                <!-- Step 3 -->
+                <div class="step hidden" id="step-3">
+                    <h2 class="text-lg font-bold mb-4">Tell us more about your Property</h2>
+                    <div class="text-bold text-lg font-semibold">Add Room Details</div>
+                    <!-- basic details -->
+                      <label class="block mb-2">No. of Bedrooms</label>
+                      <input 
+                      type="number" 
+                      class="w-full p-2 border rounded mb-4" 
+                      placeholder="Number of bedrooms Ex. 2"
+                      name="No_of_bedrooms"
+                      >
+                      <label class="block mb-2">No. of Bathrooms</label>
+                      <input 
+                      type="number" 
+                      class="w-full p-2 border rounded mb-4" 
+                      placeholder="Number of Bathrooms Ex. -1"
+                      name="No_of_bathrooms">
+                      <label class="block mb-2">No. of Balconies</label>
+                      <input 
+                      type="number" 
+                      class="w-full p-2 border rounded mb-4" 
+                      placeholder="Number of Balconies Ex. 2"
+                      name="No_of_balconies">
+                      <!-- area of property -->
+                      <div >Add Area Details</div>
+                      <label class="block mb-2 text-gray-700 text-sm">Atleast one are 
+                        type is mandatory</label>
+                      <div class="flex">
+                          <input 
+                          type="number" 
+                          class="w-full p-2 border rounded-l-md " 
+                          placeholder="Carpet area ex. 200"
+                          name="area">
+                          <select 
+                          id="carpet-area" 
+                          name="carpet-area"
+                          class="w-1/4 border-t border-r border-b rounded-r-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                              <option 
+                              value="sqft" selected>sq.ft</option>
+                              <option 
+                              value="sqm">sq. m</option>
+                              <option 
+                              value="sqyd">sq. yd</option>
+                          </select>
+                    </div>
+                    <!-- furnishing details -->
+                    <div>Furnishing</div>
+                    <div>
+                      <button 
+                      class="border-2 rounded-lg border-[#888b92] p-2 m-2" 
+                      id="furnish"
+                      type="button">
+                      Furnished</button> 
+                      <button 
+                      class="border-2 rounded-lg border-[#888b92] p-2 m-2" 
+                      id="semi_furnish"
+                      type="button">
+                      Semi-furnished
+                      </button> 
+                      <button 
+                      class="border-2 rounded-lg border-[#888b92] p-2 m-2" 
+                      id="un_furnished"
+                      type="button">
+                      Un-furnished
+                      </button>
+                      <!-- furnishing options for semi and full furnished -->
+                      <div id="furnishing_detail" class="hidden">
+                        <div class="font-bold text-sm mb-2"> at least three furnishing are mandatory for furnished</div>
+                        <div class="flex items-center space-x-4 mb-2">
+                        <button type="button" onclick="decrement('light')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button>
+                        <input type="number" id="light" class="w-12 text-center border rounded-md bg-gray-100" value = "0" readonly> 
+                        <button type="button" onclick="increment('light')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <span>Light</span>
+                        
+                        <button type="button" onclick="decrement('Fans')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button> 
+                        <input type="number" class="w-12 text-center border rounded-md bg-gray-100" id="Fans" value = "0" readonly> 
+                        <button type="button" onclick="increment('Fans')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <span>Fans</span>
+
+                        </div>
+                        <div class="flex items-center space-x-4 mb-2">
+
+                        <button type="button" onclick="decrement('Ac')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button>
+                        <input type="number" class="w-12 text-center border rounded-md bg-gray-100" id="Ac" value = "0" readonly>  
+                        <button type="button" onclick="increment('Ac')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <span>Ac</span>
+                          
+                        <button type="button" onclick="decrement('TV')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button> 
+                        <input type="number" class="w-12 text-center border rounded-md bg-gray-100" id="TV" value = "0" readonly>  
+                        <button type="button" onclick="increment('TV')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <span>TV</span>
+
+                        </div>
+
+                        <div class="flex items-center space-x-4 mb-2">
+
+                        <button type="button" onclick="decrement('Beds')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button> 
+                        <input type="number" class="w-12 text-center border rounded-md bg-gray-100" id="Beds" value = "0" readonly>  
+                        <button type="button" onclick="increment('Beds')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <span>Beds</span>
+                          
+                        <button type="button" onclick="decrement('Wardrobe')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button> 
+                        <input type="number" class="w-12 text-center border rounded-md bg-gray-100" id="Wardrobe" value = "0" readonly>  
+                        <button type="button" onclick="increment('Wardrobe')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <span>Wardrobe</span>
+
+                        </div>
+                        <div class="flex items-center space-x-4 mb-2">
+
+                        <button type="button" onclick="decrement('Geyser')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button> 
+                        <input type="number"  class="w-12 text-center border rounded-md bg-gray-100"id="Geyser" value = "0" readonly>  
+                        <button type="button" onclick="increment('Geyser')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <span>Geyser</span>
+                        
+                        <input type="checkbox" name="sofa" id="sofa">
+                        <label for="sofa">Sofa</label>
+                        </div>
+                        <div class="flex items-center space-x-4 mb-2">
+                        <input type="checkbox" name="washing_machine" id="washing_machine">
+                        <label for="sofa">Washing Machine</label>
+
+                        <input type="checkbox" name="stove" id="stove">
+                        <label for="sofa">Stove</label>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 mb-2">
+                        <input type="checkbox" name="fridge" id="fridge">
+                        <label for="sofa">Fridge</label>
+                        
+                        <input type="checkbox" name="water_purifier" id="water_purifier">
+                        <label for="sofa">Water Purifier</label>
+                        </div>
+                        <div class="flex items-center space-x-4 mb-2">
+                        <input type="checkbox" name="microwave" id="microwave">
+                        <label for="sofa">Microwave</label>
+                        
+                        <input type="checkbox" name="modular_kitched" id="modular_kitched">
+                        <label for="sofa">Modular Kitched</label>
+                        </div>
+                        <div class="flex items-center space-x-4 mb-2">
+                        <input type="checkbox" name="chimney" id="chimney">
+                        <label for="sofa">Chimney</label>
+                        
+                        <input type="checkbox" name="dinning_table" id="dinning_table">
+                        <label for="sofa">Dinning Table</label>
+                        </div>
+                        <div class="flex items-center space-x-4 mb-2">
+                        <input type="checkbox" name="curtains" id="curtains">
+                        <label for="sofa">Curtains</label>
+                        
+                        <input type="checkbox" name="sofa" id="sofa">
+                        <label for="sofa">Exhaust Fan</label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end of furnishing detials -->
+                    <!-- start of  other detials for property -->
+                    <!-- start of floor details -->
+                    <div> Floor details </div>
+                    <div class="flex space-x-4">
+                      <div class="flex flex-col">
+                        <label 
+                        for="total_floors"
+                        class="text-gray-600 text-sm mb-1">
+                        Total Floors
+                        </label>
+
+                        <input 
+                        type="number" 
+                        name="total_floors" 
+                        id="total_floors" 
+                        oninput="updateFloorOptions()"
+                        min="1" 
+                        placeholder="Enter floors" 
+                        class="border rounded-md px-3 py-2 w-40">
+                      </div>
+                      <div class="flex flex-col">
+                        <label 
+                        for="floor_Select"
+                        class="text-gray-600 text-sm mb-1">
+                        Property on Floor
+                        </label>
+
+                        <select 
+                        name="your_floor" 
+                        id="floor_Select"
+                        class="border rounded-md px-3 py-2 w-40"
+                        >
+                          <option value="" selected>
+                            Select your floor
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- end of floor details -->
+                    <!-- start of age of property -->
+                    <div>Age of your property</div>
+                    <div class="flex space-x-4 mb-2">
+                      <label class="checkbox-label px-4 py-2 border rounded-md cursor-pointer">
+                          <input type="checkbox" name="singleSelect" class="hidden" onclick="selectOnlyOne(this)">
+                          0-1 years
+                      </label>
+                      
+                      <label class="checkbox-label px-4 py-2 border rounded-md cursor-pointer">
+                          <input type="checkbox" name="singleSelect" class="hidden" onclick="selectOnlyOne(this)">
+                          1-5 years
+                      </label>
+              
+                      <label class="checkbox-label px-4 py-2 border rounded-md cursor-pointer">
+                          <input type="checkbox" name="singleSelect" class="hidden" onclick="selectOnlyOne(this)">
+                          5-10 years
+                      </label>
+                      <label class="checkbox-label px-4 py-2 border rounded-md cursor-pointer">
+                          <input type="checkbox" name="singleSelect" class="hidden" onclick="selectOnlyOne(this)">
+                          10 + years
+                      </label>
+                  </div>
+                  <!-- end of age of property  -->
+                  <label for="rent_price">Expected Rent</label>
+                  <input type="number" id="rent_price" min="0" name="rent_price">
+                </div>
+                <!-- end of step 3 -->
+                <!-- Step 4 -->
+                <div class="step hidden" id="step-4">
+                    <h2 class="text-lg font-semibold mb-4">Photos &  Videos</h2>
+                      <label class="block mb-2">Bedroom</label>
+                      <input 
+                      type="file" 
+                      class="w-full p-2 border rounded mb-4"
+                      name="bedroom_1">
+                      <label class="block mb-2">2nd Bedroom(optional)</label>
+                      <input 
+                      type="file" 
+                      class="w-full p-2 border rounded mb-4"
+                      name="bedroom_2">
+                      <label class="block mb-2">Kitchen</label>
+                      <input 
+                      type="file" 
+                      class="w-full p-2 border rounded mb-4"
+                      name="kitchen"
+                      >
+                      <label class="block mb-2">Balcony</label>
+                      <input 
+                      type="file" 
+                      class="w-full p-2 border rounded mb-4"
+                      name="balcony">
+                      <label class="block mb-2">Bathroom</label>
+                      <input 
+                      type="file" 
+                      class="w-full p-2 border rounded mb-4"
+                      name="bathroom">
+                      <label class="block mb-2">Hall</label>
+                      <input 
+                      type="file" 
+                      class="w-full p-2 border rounded mb-4"
+                      name="hall">
+                      <label class="block mb-2">Upload Video</label>
+                      <input 
+                      type="file" 
+                      class="w-full p-2 border rounded mb-4"
+                      name="video">
+                </div>
+                <!-- end of step 4 -->
+                <!-- Step 5 -->
+                <!-- whole step 5 is optional -->
+                <div class="step hidden" id="step-5">
+                    <h2 class="text-lg font-semibold mb-4">Add Other Details</h2>
+                    <div> Security Deposit (optional) </div>
+                    <div class="flex space-x-4 mb-4">
+                        <label class="flex items-center">
+                            <input 
+                            type="radio" 
+                            name="Security_deposit" 
+                            value="Fixed" class="mr-2">
+                            Fixed
+                        </label>
+                        <label class="flex items-center">
+                            <input 
+                            type="radio" 
+                            name="Security_deposit" 
+                            value="Multiple of Rent" class="mr-2">
+                            Multiple of Rent
+                        </label>
+                        <label class="flex items-center">
+                            <input 
+                            type="radio" 
+                            name="Security_deposit" 
+                            value="None" class="mr-2">
+                            None
+                        </label>
+                    </div>
+
+                    <div> Month of notice (optional) </div>
+                      <div class="flex space-x-4 mb-4">
+                          <label class="flex items-center">
+                              <input 
+                              type="radio" 
+                              name="monthNotice" 
+                              value="None" class="mr-2">
+                              None
+                          </label>
+                          <label class="flex items-center">
+                              <input 
+                              type="radio" 
+                              name="monthNotice" 
+                              value="1" class="mr-2">
+                              1 Month
+                          </label>
+                          <label class="flex items-center">
+                              <input 
+                              type="radio" 
+                              name="monthNotice" 
+                              value="2" class="mr-2">
+                              2 Month
+                          </label>
+                          <label class="flex items-center">
+                              <input 
+                              type="radio" 
+                              name="monthNotice" 
+                              value="3" class="mr-2">
+                              3 Month
+                          </label>
+                          <label class="flex items-center">
+                              <input 
+                              type="radio" 
+                              name="monthNotice" 
+                              value="4" class="mr-2">
+                              4 Month
+                          </label>
+                          <label class="flex items-center">
+                              <input 
+                              type="radio" 
+                              name="monthNotice" 
+                              value="5" class="mr-2">
+                              5 Month
+                          </label>
+                          <label class="flex items-center">
+                              <input 
+                              type="radio" 
+                              name="monthNotice" 
+                              value="6" class="mr-2">
+                              6 Month
+                          </label>
+                      </div>
+                    </div>
+                <!-- end of step 5 -->
+                <!-- Navigation buttons continue and submit where submit is hidden by default-->
+                <div class="flex justify-between mt-6">
+                    <button 
+                    type="button" 
+                    id="nextBtn" 
+                    class="px-4 py-2 bg-blue-500 text-white rounded">Continue</button>
+                </div>
+                <div class="flex justify-between mt-6">
+                    <button 
+                    type="submit" 
+                    id="submitBtn" 
+                    class="px-4 py-2 bg-blue-500 text-white rounded hidden">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 5;
+
+        function showStep(step) {
+            // Hiding all steps all steps in begnining 
+            document.querySelectorAll(".step").forEach(s => s.classList.add("hidden"));
+            // showing current step like step = 1 so step-1
+            document.getElementById(`step-${step}`).classList.remove("hidden");
+
+            // Updating stepper UI here blue for complete grey for incomplete
+            // one more logic we have to add is ki if you have already visited and filled the proper things then that step should be blue sagar will be add this 
+            document.querySelectorAll(".step-item").forEach((item, index) => {
+                const circle = item.querySelector(".step-circle");
+                circle.classList.remove("bg-blue-500", "bg-gray-300");
+                circle.classList.add(index + 1 <= step ? "bg-blue-500" : "bg-gray-300");
+            });
+
+            // Handle button visibility
+            document.getElementById("prevBtn").classList.toggle("hidden", step === 1);
+            document.getElementById("nextBtn").innerText = "Continue";
+            document.getElementById("nextBtn").classList.remove("hidden");
+            document.getElementById("submitBtn").classList.add("hidden");
+            if(step === totalSteps) {
+                document.getElementById("nextBtn").classList.add("hidden");
+                document.getElementById("submitBtn").classList.remove("hidden");
+            }
+        }
+
+        // event listner on nextBtm
+        document.getElementById("nextBtn").addEventListener("click", () => {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+            } else {
+                alert("Form submitted!");
+            }
+        });
+
+        // event listner on prevBtn
+        document.getElementById("prevBtn").addEventListener("click", () => {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        // Initialize first step
+        showStep(currentStep);
+
+        function activeFurnishing(name){
+          if(name==="furnish" || name==="semi_furnish") document.getElementById("furnishing_detail").classList.remove("hidden");
+          else document.getElementById("furnishing_detail").classList.add("hidden");
+        }
+        // event listeners for activing furnishing 
+        document.getElementById("furnish").addEventListener("click", () => {
+            activeFurnishing("furnish");
+        });
+        document.getElementById("semi_furnish").addEventListener("click", () => {
+            activeFurnishing("semi_furnish");
+        });
+        // to deactivate furninshing part
+        document.getElementById("un_furnished").addEventListener("click", () => {
+            activeFurnishing("un_furnished");
+        });
+
+        function increment(id) {
+            let element = document.getElementById(id);
+            let value = parseInt(element.value);
+            element.value = value + 1;
+        }
+
+        function decrement(id) {
+            let element = document.getElementById(id);
+            let value = parseInt(element.value);
+            if (value > 0) {
+                element.value = value - 1;
+            }
+        }
+
+        // for updating the no of floors dynamically 
+
+        function updateFloorOptions() {
+            let totalFloors = document.getElementById("total_floors").value;
+            let floorSelect = document.getElementById("floor_Select");
+
+            // clearing options that exists already 
+            floorSelect.innerHTML = '<option value="" selected>Select your floor</option>';
+
+            // adding new options
+            for (let i = 1; i <= totalFloors; i++) {
+                let option = document.createElement("option");
+                option.value = i;
+                option.textContent = i;
+                floorSelect.appendChild(option);
+            }
+        }
+        // to prevent selecting multiple options in age of property as well as chinging the color of selected one 
+
+        function selectOnlyOne(selectedCheckbox) {
+            // Getting checkboxes 
+            let checkboxes = document.querySelectorAll('input[name="singleSelect"]');
+            let labels = document.querySelectorAll('.checkbox-label');
+
+            // Unchecking and updating style 
+            checkboxes.forEach((checkbox, index) => {
+                checkbox.checked = false;
+                labels[index].classList.remove("bg-blue-300", "text-white");
+                labels[index].classList.add("bg-white", "text-black");
+            });
+
+            // Checking the clicked checkbox
+            selectedCheckbox.checked = true;
+            let label = selectedCheckbox.parentElement;
+            label.classList.add("bg-blue-300", "text-white");
+            label.classList.remove("bg-white", "text-black");
+        }
+    </script>
+
+</body>
+
+</html>
