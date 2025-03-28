@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Register Page</title>
+</head>
+
+<body>
+  <div class="min-h-screen bg-zinc-50 py-40">
+    <div class="container mx-auto ">
+      <div class="flex w-8/12 bg-zinc-100 rounded-xl mx-auto shadow-xl overflow-hidden items-center justify-center">
+        <!-- image -->
+        <div class="w-1/2 md:block hidden">
+          <img class="rounded-2xl mx-4 h-full" src="login.jpg" alt="" />
+        </div>
+        <!-- Register Form -->
+        <div class="p-8 rounded-lg w-full h-full flex">
+          <!-- Form Content -->
+          <div class="w-3/4 pl-8">
+            <form id="multi-step-form" action="#" th:action="@{/doRegister}" method="POST">
+              <!-- back button hidden at step 1 -->
+              <button type="button" id="prevBtn" class="text-black rounded hidden">
+                <i class="fa-solid fa-arrow-right" style="transform: rotate(180deg);"></i>
+                Back
+              </button>
+
+              <div class="step" id="step-1">
+                <h2 class="text-lg font-bold mb-4">Enter Email Id and Verify</h2>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="u_email" required class="border rounded px-2 py-1 w-full">
+                <button id="sendOtpBtn" class="bg-blue-500 text-white px-4 py-2 rounded w-full" type="button">Send OTP</button>
+
+                <div id="otp-section" class="hidden mt-4">
+                  <label for="otp" class="block">Enter OTP:</label>
+                  <input type="text" id="otp" class="border p-2 w-full rounded mb-2">
+                  <button id="verifyOtpBtn" class="bg-green-500 text-white px-4 py-2 rounded w-full" type="button">Verify OTP</button>
+                </div>
+              </div>
+              
+
+              <div class="step" id="step-2">
+                <h2 class="text-lg font-bold mb-4">Personal Information</h2>
+                <label for="u_first_name">First Name:</label>
+                <input type="text" id="u_first_name" name="u_first_name" required
+                  class="border rounded px-2 py-1 w-full">
+
+                <label for="u_last_name">Last Name:</label>
+                <input type="text" id="u_last_name" name="u_last_name" required class="border rounded px-2 py-1 w-full">
+
+                <label for="u_type">User Type (Tenant/Dealer):</label>
+                <select id="u_type" name="u_type" required class="border rounded px-2 py-1 w-full">
+                  <option value="tenant">Tenant</option>
+                  <option value="dealer">Dealer</option>
+                </select>
+              </div>
+
+              <!-- Step 2: Contact Details -->
+              <div class="step hidden" id="step-3">
+                <h2 class="text-lg font-bold mb-4">Contact Details</h2>
+
+                <label for="u_phone_number">Phone Number:</label>
+                <input type="number" id="u_phone_number" name="u_phone_number" required
+                  class="border rounded px-2 py-1 w-full">
+
+                <label for="extra_number">Alternative Phone Number:</label>
+                <input type="number" id="extra_number" name="extra_number" class="border rounded px-2 py-1 w-full">
+              </div>
+
+              <!-- Step 3: Location Information -->
+              <div class="step hidden" id="step-4">
+                <h2 class="text-lg font-bold mb-4">Location Information</h2>
+                <label for="u_city">City:</label>
+                <input type="text" id="u_city" name="u_city" required class="border rounded px-2 py-1 w-full">
+
+                <label for="u_address">Address:</label>
+                <textarea id="u_address" name="u_address" class="border rounded px-2 py-1 w-full"></textarea>
+              </div>
+
+              <!-- Step 4: Company Details (For Dealers Only) -->
+              <div class="step hidden" id="step-5">
+                <h2 class="text-lg font-bold mb-4">Company Details (For Dealers Only)</h2>
+                <label for="c_name">Company Name:</label>
+                <input type="text" id="c_name" name="c_name" class="border rounded px-2 py-1 w-full">
+
+                <label for="c_license">Company License:</label>
+                <input type="text" id="c_license" name="c_license" class="border rounded px-2 py-1 w-full">
+
+                <label for="u_landline">Landline Number:</label>
+                <input type="number" id="u_landline" name="u_landline" class="border rounded px-2 py-1 w-full">
+              </div>
+
+              <!-- Step 5: Finalize & Submit -->
+              <div class="step hidden" id="step-6">
+                <h2 class="text-lg font-bold mb-4">Finalize & Submit</h2>
+                <p>Please review your details before submitting.</p>
+                <label>
+                  <input type="checkbox" name="agree_terms" required> I confirm that all the details provided are
+                  correct.
+                </label>
+              </div>
+
+              <!-- end of step 5 -->
+              <!-- Navigation buttons continue and submit where submit is hidden by default-->
+              <div class="flex justify-between mt-6">
+                <button type="button" id="nextBtn" class="px-4 py-2 bg-blue-500 text-white rounded">Continue</button>
+              </div>
+              <div class="flex justify-between mt-6">
+                <button type="submit" id="submitBtn"
+                  class="px-4 py-2 bg-blue-500 text-white rounded hidden">Submit</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <script>
+
+document.getElementById("sendOtpBtn").addEventListener("click", function () {
+      const email = document.getElementById("email").value;
+      fetch("/send-otp?email=" + encodeURIComponent(email), { method: "POST" })
+        .then(response => response.text())
+        .then(data => {
+          alert(data);
+          document.getElementById("otp-section").classList.remove("hidden");
+        });
+    });
+
+    document.getElementById("verifyOtpBtn").addEventListener("click", function () {
+      const email = document.getElementById("email").value;
+      const otp = document.getElementById("otp").value;
+
+      fetch("/verify-otp?email=" + encodeURIComponent(email) + "&otp=" + encodeURIComponent(otp), { method: "POST" })
+        .then(response => response.text())
+        .then(data => {
+          if (data === "OTP Verified") {
+            alert("OTP Verified! You can now register.");
+            otpVerified = true;
+          } else {
+            alert("Invalid OTP! Please try again.");
+          }
+        });
+    });
+
+          let currentStep = 1;
+          const totalSteps = 6;
+
+          function showStep(step) {
+            // Hiding all steps all steps in begnining 
+            document.querySelectorAll(".step").forEach(s => s.classList.add("hidden"));
+            // showing current step like step = 1 so step-1
+            document.getElementById(`step-${step}`).classList.remove("hidden");
+
+            // Updating stepper UI here blue for complete grey for incomplete
+            // one more logic we have to add is ki if you have already visited and filled the proper things then that step should be blue sagar will be add this 
+            document.querySelectorAll(".step-item").forEach((item, index) => {
+              const circle = item.querySelector(".step-circle");
+              circle.classList.remove("bg-blue-500", "bg-gray-300");
+              circle.classList.add(index + 1 <= step ? "bg-blue-500" : "bg-gray-300");
+            });
+
+            // Handle button visibility
+            document.getElementById("prevBtn").classList.toggle("hidden", step === 1);
+            document.getElementById("nextBtn").innerText = "Continue";
+            document.getElementById("nextBtn").classList.remove("hidden");
+            document.getElementById("submitBtn").classList.add("hidden");
+            if (step === totalSteps) {
+              document.getElementById("nextBtn").classList.add("hidden");
+              document.getElementById("submitBtn").classList.remove("hidden");
+            }
+          }
+
+          // event listner on nextBtm
+          document.getElementById("nextBtn").addEventListener("click", () => {
+            if (currentStep < totalSteps) {
+              if (currentStep == 4 && !(isDealer())) {
+                currentStep = 6;
+              } else {
+                currentStep++;
+              }
+              showStep(currentStep);
+            } else {
+              alert("Form submitted!");
+            }
+          });
+
+          // event listner on prevBtn
+          document.getElementById("prevBtn").addEventListener("click", () => {
+            if (currentStep > 1) {
+              if (currentStep == 6 && !(isDealer())) {
+                currentStep = 4;
+              } else {
+                currentStep--;
+              }
+              showStep(currentStep);
+            }
+          });
+
+          // Initialize first step
+          showStep(currentStep);
+
+          function isDealer() {
+            const userTypeElement = document.getElementById("u_type");
+            return userTypeElement?.value === "dealer";
+          }
+
+        </script>
+</body>
+
+</html>
