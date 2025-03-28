@@ -12,9 +12,9 @@
 </head>
 
 <body>
-  <div class="min-h-screen bg-zinc-50 py-40">
+  <div class="min-h-screen bg-[#222831] text-white py-40">
     <div class="container mx-auto ">
-      <div class="flex w-8/12 bg-zinc-100 rounded-xl mx-auto shadow-xl overflow-hidden items-center justify-center">
+      <div class="flex w-8/12 bg-[#222831] border-gray-500 rounded-xl mx-auto shadow-xl overflow-hidden items-center justify-center">
         <!-- image -->
         <div class="w-1/2 md:block hidden">
           <img class="rounded-2xl mx-4 h-full" src="login.jpg" alt="" />
@@ -25,7 +25,7 @@
           <div class="w-3/4 pl-8">
             <form id="multi-step-form" action="#" th:action="@{/doRegister}" method="POST">
               <!-- back button hidden at step 1 -->
-              <button type="button" id="prevBtn" class="text-black rounded hidden">
+              <button type="button" id="prevBtn" class="text-white rounded hidden">
                 <i class="fa-solid fa-arrow-right" style="transform: rotate(180deg);"></i>
                 Back
               </button>
@@ -34,10 +34,10 @@
                 <h2 class="text-lg font-bold mb-4">Enter Email Id and Verify</h2>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="u_email" required class="border rounded px-2 py-1 w-full">
-                <button id="sendOtpBtn" class="bg-blue-500 text-white px-4 py-2 rounded w-full" type="button">Send OTP</button>
+                <button id="sendOtpBtn" class="bg-[#00ADB5] text-white mt-2 px-4 py-1 rounded w-full" type="button">Send OTP</button>
 
                 <div id="otp-section" class="hidden mt-4">
-                  <label for="otp" class="block">Enter OTP:</label>
+                  <label for="otp" class="block text-black">Enter OTP:</label>
                   <input type="text" id="otp" class="border p-2 w-full rounded mb-2">
                   <button id="verifyOtpBtn" class="bg-green-500 text-white px-4 py-2 rounded w-full" type="button">Verify OTP</button>
                 </div>
@@ -48,13 +48,13 @@
                 <h2 class="text-lg font-bold mb-4">Personal Information</h2>
                 <label for="u_first_name">First Name:</label>
                 <input type="text" id="u_first_name" name="u_first_name" required
-                  class="border rounded px-2 py-1 w-full">
+                  class="border  border-gray-700 bg-[#222831] rounded px-2 py-1 w-full mt-1">
 
-                <label for="u_last_name">Last Name:</label>
-                <input type="text" id="u_last_name" name="u_last_name" required class="border rounded px-2 py-1 w-full">
+                <label for="u_last_name" class="mt-2">Last Name:</label>
+                <input type="text" id="u_last_name" name="u_last_name" required class="border rounded  border-gray-700 bg-[#222831] px-2 py-1 mt-1 w-full">
 
-                <label for="u_type">User Type (Tenant/Dealer):</label>
-                <select id="u_type" name="u_type" required class="border rounded px-2 py-1 w-full">
+                <label for="u_type" class="mt-2">User Type (Tenant/Dealer):</label>
+                <select id="u_type" name="u_type" required class="border  border-gray-700 bg-[#222831] rounded px-2 py-1 w-full mt-1">
                   <option value="tenant">Tenant</option>
                   <option value="dealer">Dealer</option>
                 </select>
@@ -66,20 +66,20 @@
 
                 <label for="u_phone_number">Phone Number:</label>
                 <input type="number" id="u_phone_number" name="u_phone_number" required
-                  class="border rounded px-2 py-1 w-full">
+                  class="border rounded px-2 py-1 w-full  border-gray-700 bg-[#222831] mt-1">
 
                 <label for="extra_number">Alternative Phone Number:</label>
-                <input type="number" id="extra_number" name="extra_number" class="border rounded px-2 py-1 w-full">
+                <input type="number" id="extra_number" name="extra_number" class="border rounded px-2 py-1 w-full  border-gray-700 bg-[#222831] mt-1">
               </div>
 
               <!-- Step 3: Location Information -->
               <div class="step hidden" id="step-4">
                 <h2 class="text-lg font-bold mb-4">Location Information</h2>
                 <label for="u_city">City:</label>
-                <input type="text" id="u_city" name="u_city" required class="border rounded px-2 py-1 w-full">
+                <input type="text" id="u_city" name="u_city" required class="border rounded px-2 py-1 w-full  border-gray-700 bg-[#222831] mt-1">
 
                 <label for="u_address">Address:</label>
-                <textarea id="u_address" name="u_address" class="border rounded px-2 py-1 w-full"></textarea>
+                <textarea id="u_address" name="u_address" class="border rounded px-2 py-1 w-full  border-gray-700 bg-[#222831] mt-1"></textarea>
               </div>
 
               <!-- Step 4: Company Details (For Dealers Only) -->
@@ -108,11 +108,11 @@
               <!-- end of step 5 -->
               <!-- Navigation buttons continue and submit where submit is hidden by default-->
               <div class="flex justify-between mt-6">
-                <button type="button" id="nextBtn" class="px-4 py-2 bg-blue-500 text-white rounded">Continue</button>
+                <button type="button" id="nextBtn" class="px-4 py-2 bg-[#00ADB5] text-white rounded">Continue</button>
               </div>
               <div class="flex justify-between mt-6">
                 <button type="submit" id="submitBtn"
-                  class="px-4 py-2 bg-blue-500 text-white rounded hidden">Submit</button>
+                  class="px-4 py-2 bg-[#00ADB5] text-white rounded hidden">Submit</button>
               </div>
 
             </form>
