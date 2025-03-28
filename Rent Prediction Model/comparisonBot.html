@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #333;
+        }
+        input {
+            padding: 5px;
+            margin: 5px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: #fff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        #summary {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff;
+            border-left: 4px solid #4CAF50;
+        }
+        .chatBox {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f0f0f0;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Rental Property Comparison</h2>
+    
+    <h3>Property 1</h3>
+    <input type="text" id="property1_name" placeholder="Name">
+    <input type="text" id="property1_rent" placeholder="Rent">
+    <input type="text" id="property1_bedrooms" placeholder="Bedrooms">
+    <input type="text" id="property1_bathrooms" placeholder="Bathrooms">
+    <input type="text" id="property1_furnishing" placeholder="Furnishing">
+
+    <h3>Property 2</h3>
+    <input type="text" id="property2_name" placeholder="Name">
+    <input type="text" id="property2_rent" placeholder="Rent">
+    <input type="text" id="property2_bedrooms" placeholder="Bedrooms">
+    <input type="text" id="property2_bathrooms" placeholder="Bathrooms">
+    <input type="text" id="property2_furnishing" placeholder="Furnishing">
+    
+    <br>
+    <button id="compareBtn">Compare Properties</button>
+
+    <div class="chatBox" id="chatBox"></div>
+    <div id="tableContainer"></div>
+    <div id="summary"></div>
+
+    <script>
+        const API_KEY = "AIzaSyAcGUsJgyqUURneS74X2o5sttP3Qg9WKqo"; // Replace with your actual API key
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+
+        document.getElementById("compareBtn").addEventListener("click", async () => {
+            const property1 = {
+                name: document.getElementById("property1_name").value,
+                rent: document.getElementById("property1_rent").value,
+                bedrooms: document.getElementById("property1_bedrooms").value,
+                bathrooms: document.getElementById("property1_bathrooms").value,
+                furnishing: document.getElementById("property1_furnishing").value
+            };
+
+            const property2 = {
+                name: document.getElementById("property2_name").value,
+                rent: document.getElementById("property2_rent").value,
+                bedrooms: document.getElementById("property2_bedrooms").value,
+                bathrooms: document.getElementById("property2_bathrooms").value,
+                furnishing: document.getElementById("property2_furnishing").value
+            };
+
+            if (!property1.name || !property2.name) return;
+
+            displayMessage(`Comparing: ${property1.name} vs ${property2.name}`, "user");
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: `Compare these two rental properties:
+                        1. ${JSON.stringify(property1)}
+                        2. ${JSON.stringify(property2)}
+                        Provide a detailed analysis in table format and one short paragraph as a summary for both property.`
+                            }]
+                        }]
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}, ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't compare those properties.";
+
+                processResponse(reply);
+            } catch (error) {
+                console.error("Error fetching response:", error);
+                displayMessage("Error communicating with the chatbot: " + error.message, "bot");
+            }
+        });
+
+        function displayMessage(text, sender) {
+            const chatBox = document.getElementById("chatBox");
+            const messageDiv = document.createElement("div");
+            messageDiv.className = sender;
+            messageDiv.innerText = text;
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function processResponse(reply) {
+            reply = reply.replace(/(\*\*Property Comparison Table\*\*|\*\*Summary Paragraph\*\*)/g, "").trim();
+            const sections = reply.split("\n\n"); // Split response into sections
+            let tableMarkdown = "", summaryText = "";
+
+            for (let section of sections) {
+                if (section.includes("|---")) tableMarkdown = section; // Identify Markdown Table
+                else summaryText += section + "\n"; // Everything else is summary
+            }
+
+            renderTable(tableMarkdown);
+            renderSummary(summaryText.trim());
+        }
+
+        function renderTable(markdownTable) {
+            if (!markdownTable) return;
+
+            let lines = markdownTable.trim().split("\n");
+            if (lines.length < 2) return;
+
+            lines.splice(1, 1); // Remove separator row
+
+            let table = document.createElement("table");
+
+            lines.forEach((line, index) => {
+                let row = document.createElement(index === 0 ? "thead" : "tr");
+                let cells = line.split("|").map(cell => cell.trim()).filter(cell => cell !== "");
+
+                cells.forEach(cellText => {
+                    let cell = document.createElement(index === 0 ? "th" : "td");
+                    cell.innerText = cellText;
+                    row.appendChild(cell);
+                });
+
+                table.appendChild(row);
+            });
+
+            document.getElementById("tableContainer").innerHTML = "";
+            document.getElementById("tableContainer").appendChild(table);
+        }
+
+        function renderSummary(summaryText) {
+            document.getElementById("summary").innerHTML = `<h3>Summary</h3><p>${summaryText}</p>`;
+        }
+    </script>
+
+</body>
+</html>

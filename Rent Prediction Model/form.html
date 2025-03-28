@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Rent Prediction</title>
+    <script>
+        async function predictRent() {
+            const formData = {
+                "BHK": document.getElementById("bhk").value,
+                "Size": document.getElementById("size").value,
+                "Floor": document.getElementById("floor").value,
+                "Bathroom": document.getElementById("bathroom").value,
+                "Area Type": document.getElementById("area_type").value,
+                "Area Locality": document.getElementById("area_locality").value,
+                "City": document.getElementById("city").value,
+                "Furnishing Status": document.getElementById("furnishing_status").value,
+                "Tenant Preferred": document.getElementById("tenant_preferred").value
+            };
+
+            const response = await fetch("http://localhost:5000/predict", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+            document.getElementById("result").innerHTML = `Predicted Rent: ₹${data.predicted_rent}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>House Rent Predictor</h2>
+
+    <label>BHK:</label> <input type="number" id="bhk"><br>
+    <label>Size (sq ft):</label> <input type="number" id="size"><br>
+    <label>Floor:</label> <input type="number" id="floor"><br>
+    <label>Bathroom:</label> <input type="number" id="bathroom"><br>
+    <label>Area Type:</label>
+    <select id="area_type">
+        <option value="Super Area">Super Area</option>
+        <option value="Carpet Area">Carpet Area</option>
+        <option value="Built Area">Built Area</option>
+    </select><br>
+
+    <label>Area Locality:</label> <input type="text" id="area_locality"><br>
+    <label>City:</label> <input type="text" id="city"><br>
+
+    <label>Furnishing Status:</label>
+    <select id="furnishing_status">
+        <option value="Furnished">Furnished</option>
+        <option value="Semi-Furnished">Semi-Furnished</option>
+        <option value="Unfurnished">Unfurnished</option>
+    </select><br>
+
+    <label>Tenant Preferred:</label>
+    <select id="tenant_preferred">
+        <option value="Family">Family</option>
+        <option value="Bachelor">Bachelor</option>
+        <option value="Company">Company</option>
+    </select><br>
+
+    <button onclick="predictRent()">Predict Rent</button>
+
+    <h3 id="result"></h3>
+</body>
+</html>
