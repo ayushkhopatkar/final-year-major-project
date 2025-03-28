@@ -16,13 +16,13 @@
     />
 </head>
 
-<body class="bg-gray-100 ">
+<body class="bg-[#222831] text-white ">
     <nav
-      class="w-full h-[72px] bg-[#145da0] flex justify-between px-4 items-center md:px-5 shadow-sm shadow-gray-500 sticky top-0 z-10 "
+      class="w-full h-[72px] bg-[#393E46] flex justify-between px-4 items-center md:px-5 shadow-sm shadow-gray-500 sticky top-0 z-10 "
     >
       <!-- House rental text -->
       <div class="text-2xl text-white font-bold">
-        <i class="fa-solid fa-house-chimney"></i>ouse Rentals
+        <i class="fa-solid fa-house-chimney text-[#0ACFC7]"></i>ouse Rentals
       </div>
       <!-- user+dropdown menu -->
       <div class="flex">
@@ -94,30 +94,30 @@
         <div class="w-1/4 border-r pr-4">
             <ul class="space-y-4">
                 <li class="flex items-center space-x-2 step-item p-5" data-step="1">
-                    <div class="step-circle w-8 h-8 flex items-center justify-center rounded-full text-white font-bold">
+                    <div class="step-circle w-8 h-8 flex items-center justify-center rounded-full bg-[#393E46] text-black font-bold">
                         1</div>
-                    <span class="text-gray-700">Basic Details <br> step 1</span>
+                    <span class="text-gray-100">Basic Details <br> step 1</span>
                 </li>
                 <li class="flex items-center space-x-2 step-item p-5" data-step="2">
-                    <div class="step-circle w-8 h-8 flex items-center justify-center rounded-full text-white font-bold">
+                    <div class="step-circle w-8 h-8 flex items-center justify-center rounded-full bg-[#393E46] text-black font-bold">
                         2</div>
-                    <span class="text-gray-700">Location Details <br> step 2</span>
+                    <span class="text-gray-100">Location Details <br> step 2</span>
                 </li>
                 <li class="flex items-center space-x-2 step-item p-5" data-step="3">
-                    <div class="step-circle w-8 h-8 flex items-center justify-center rounded-full text-white font-bold">
+                    <div class="step-circle w-8 h-8 flex items-center justify-center rounded-full bg-[#393E46] text-black font-bold">
                         3</div>
-                    <span class="text-gray-700">Property Profile <br> step 3</span>
+                    <span class="text-gray-100">Property Profile <br> step 3</span>
                 </li>
                 <li class="flex items-center space-x-2 step-item p-5" data-step="4">
                     <div
-                        class="step-circle w-8 h-8 flex items-center justify-center rounded-full text-white font-bold">
+                        class="step-circle w-8 h-8 flex items-center justify-center rounded-full bg-[#393E46] text-black font-bold">
                         4</div>
-                    <span class="text-gray-700">Photos, Videos & Voice-over <br> step 4</span>
+                    <span class="text-gray-100">Photos, Videos & Voice-over <br> step 4</span>
                 </li>
                 <li class="flex items-center space-x-2 step-item p-5" data-step="5">
-                    <div class="step-circle w-8 h-8 flex items-center justify-center rounded-full text-white font-bold">
+                    <div class="step-circle w-8 h-8 flex items-center justify-center rounded-full bg-[#393E46] text-black font-bold">
                         5</div>
-                    <span class="text-gray-700">Other Details <br> step 5</span>
+                    <span class="text-gray-100">Other Details <br> step 5</span>
                 </li>
             </ul>
         </div>
@@ -127,7 +127,7 @@
               <!-- back button hidden at step 1 -->
               <button 
                 type="button" id="prevBtn"
-                class="text-black rounded hidden">
+                class="text-white rounded hidden">
                 <i class="fa-solid fa-arrow-right" 
                 style="transform: rotate(180deg);"></i> 
                 Back
@@ -138,11 +138,11 @@
                     <div>What kind of Property You have ?</div>
                     <label class="block mb-2">Property Type</label>
                     <div class="flex space-x-4 mb-4">
-                        <label class="flex items-center">
+                        <label class="flex items-center bg-[#393E46]">
                             <input 
                             type="radio" 
                             name="propertyType" 
-                            value="Flat/Apartment" class="mr-2">
+                            value="Flat/Apartment" class="mr-2 bg-[#393E46]">
                             Flat/Apartment
                         </label>
                         <label class="flex items-center">
@@ -160,35 +160,34 @@
                     <h2 class="text-lg font-semibold mb-4">Where is your property located?</h2>
                       <label class="block mb-2">City</label>
                       <input 
-                      type="text" class="w-full p-2 border rounded mb-4" 
-                      placeholder="Enter 
-                      name of city Eg. Airoli">
+                      type="text" class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700" 
+                      placeholder="Enter Name of city Eg. Airoli">
 
                       <label class="block mb-2">Locality</label>
                       <input 
                       type="text" 
-                      class="w-full p-2 border rounded mb-4" 
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700" 
                       placeholder="Ex. Sector 17 "
                       name="locality">
 
                       <label class="block mb-2">Sub - Locality</label>
                       <input 
                       type="text" 
-                      class="w-full p-2 border rounded mb-4" 
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700" 
                       placeholder="Optional"
                       name="sub_locality">
 
                       <label class="block mb-2">Apartment / Society / Chawl</label>
                       <input 
                       type="text" 
-                      class="w-full p-2 border rounded mb-4"
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700"
                       placeholder="Name of your Apartment Eg. Snehsagar Apartment"
                       name="property_type">
 
                       <label class="block mb-2">House Number</label>
                       <input 
                       type="text" 
-                      class="w-full p-2 border rounded mb-4" 
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700" 
                       placeholder="Optional"
                       name="houser_number">
 
@@ -202,36 +201,36 @@
                       <label class="block mb-2">No. of Bedrooms</label>
                       <input 
                       type="number" 
-                      class="w-full p-2 border rounded mb-4" 
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700" 
                       placeholder="Number of bedrooms Ex. 2"
                       name="No_of_bedrooms"
                       >
                       <label class="block mb-2">No. of Bathrooms</label>
                       <input 
                       type="number" 
-                      class="w-full p-2 border rounded mb-4" 
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700" 
                       placeholder="Number of Bathrooms Ex. -1"
                       name="No_of_bathrooms">
                       <label class="block mb-2">No. of Balconies</label>
                       <input 
                       type="number" 
-                      class="w-full p-2 border rounded mb-4" 
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700" 
                       placeholder="Number of Balconies Ex. 2"
                       name="No_of_balconies">
                       <!-- area of property -->
                       <div >Add Area Details</div>
-                      <label class="block mb-2 text-gray-700 text-sm">Atleast one are 
+                      <label class="block mb-2 text-gray-200 text-sm">Atleast one are 
                         type is mandatory</label>
                       <div class="flex">
                           <input 
                           type="number" 
-                          class="w-full p-2 border rounded-l-md " 
+                          class="w-full p-2 border rounded-l-md bg-[#393E46] border-gray-700 " 
                           placeholder="Carpet area ex. 200"
                           name="area">
                           <select 
                           id="carpet-area" 
                           name="carpet-area"
-                          class="w-1/4 border-t border-r border-b rounded-r-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                          class="w-1/4 border-t border-r border-b rounded-r-md bg-[#393E46] border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                               <option 
                               value="sqft" selected>sq.ft</option>
                               <option 
@@ -244,18 +243,18 @@
                     <div>Furnishing</div>
                     <div>
                       <button 
-                      class="border-2 rounded-lg border-[#888b92] p-2 m-2" 
+                      class="border-2 rounded-lg bg-[#393E46] border-gray-700  p-2 m-2" 
                       id="furnish"
                       type="button">
                       Furnished</button> 
                       <button 
-                      class="border-2 rounded-lg border-[#888b92] p-2 m-2" 
+                      class="border-2 rounded-lg bg-[#393E46] border-gray-700  p-2 m-2" 
                       id="semi_furnish"
                       type="button">
                       Semi-furnished
                       </button> 
                       <button 
-                      class="border-2 rounded-lg border-[#888b92] p-2 m-2" 
+                      class="border-2 rounded-lg bg-[#393E46] border-gray-700 p-2 m-2" 
                       id="un_furnished"
                       type="button">
                       Un-furnished
@@ -264,49 +263,49 @@
                       <div id="furnishing_detail" class="hidden">
                         <div class="font-bold text-sm mb-2"> at least three furnishing are mandatory for furnished</div>
                         <div class="flex items-center space-x-4 mb-2">
-                        <button type="button" onclick="decrement('light')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button>
-                        <input type="number" id="light" class="w-12 text-center border rounded-md bg-gray-100" value = "0" readonly> 
-                        <button type="button" onclick="increment('light')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <button type="button" onclick="decrement('light')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">-</button>
+                        <input type="number" id="light" class="w-12 text-center border rounded-md bg-[#393E46] border-gray-700" value = "0" readonly> 
+                        <button type="button" onclick="increment('light')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">+</button>
                         <span>Light</span>
                         
-                        <button type="button" onclick="decrement('Fans')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button> 
-                        <input type="number" class="w-12 text-center border rounded-md bg-gray-100" id="Fans" value = "0" readonly> 
-                        <button type="button" onclick="increment('Fans')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <button type="button" onclick="decrement('Fans')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">-</button> 
+                        <input type="number" class="w-12 text-center border rounded-md bg-[#393E46] border-gray-700" id="Fans" value = "0" readonly> 
+                        <button type="button" onclick="increment('Fans')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700e p-2">+</button>
                         <span>Fans</span>
 
                         </div>
                         <div class="flex items-center space-x-4 mb-2">
 
-                        <button type="button" onclick="decrement('Ac')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button>
-                        <input type="number" class="w-12 text-center border rounded-md bg-gray-100" id="Ac" value = "0" readonly>  
-                        <button type="button" onclick="increment('Ac')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <button type="button" onclick="decrement('Ac')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">-</button>
+                        <input type="number" class="w-12 text-center border rounded-md bg-[#393E46] border-gray-700" id="Ac" value = "0" readonly>  
+                        <button type="button" onclick="increment('Ac')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">+</button>
                         <span>Ac</span>
                           
-                        <button type="button" onclick="decrement('TV')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button> 
-                        <input type="number" class="w-12 text-center border rounded-md bg-gray-100" id="TV" value = "0" readonly>  
-                        <button type="button" onclick="increment('TV')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <button type="button" onclick="decrement('TV')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">-</button> 
+                        <input type="number" class="w-12 text-center border rounded-md bg-[#393E46] border-gray-700" id="TV" value = "0" readonly>  
+                        <button type="button" onclick="increment('TV')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">+</button>
                         <span>TV</span>
 
                         </div>
 
                         <div class="flex items-center space-x-4 mb-2">
 
-                        <button type="button" onclick="decrement('Beds')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button> 
-                        <input type="number" class="w-12 text-center border rounded-md bg-gray-100" id="Beds" value = "0" readonly>  
-                        <button type="button" onclick="increment('Beds')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <button type="button" onclick="decrement('Beds')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">-</button> 
+                        <input type="number" class="w-12 text-center border rounded-md bg-[#393E46] border-gray-700" id="Beds" value = "0" readonly>  
+                        <button type="button" onclick="increment('Beds')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">+</button>
                         <span>Beds</span>
                           
-                        <button type="button" onclick="decrement('Wardrobe')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button> 
-                        <input type="number" class="w-12 text-center border rounded-md bg-gray-100" id="Wardrobe" value = "0" readonly>  
-                        <button type="button" onclick="increment('Wardrobe')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <button type="button" onclick="decrement('Wardrobe')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">-</button> 
+                        <input type="number" class="w-12 text-center border rounded-md bg-[#393E46] border-gray-700" id="Wardrobe" value = "0" readonly>  
+                        <button type="button" onclick="increment('Wardrobe')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">+</button>
                         <span>Wardrobe</span>
 
                         </div>
                         <div class="flex items-center space-x-4 mb-2">
 
-                        <button type="button" onclick="decrement('Geyser')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">-</button> 
-                        <input type="number"  class="w-12 text-center border rounded-md bg-gray-100"id="Geyser" value = "0" readonly>  
-                        <button type="button" onclick="increment('Geyser')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white p-2">+</button>
+                        <button type="button" onclick="decrement('Geyser')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">-</button> 
+                        <input type="number"  class="w-12 text-center border rounded-md bg-[#393E46] border-gray-7000"id="Geyser" value = "0" readonly>  
+                        <button type="button" onclick="increment('Geyser')" class="rounded-full w-8 h-8 flex items-center justify-center font-bold bg-[#393E46] border-gray-700 p-2">+</button>
                         <span>Geyser</span>
                         
                         <input type="checkbox" name="sofa" id="sofa">
@@ -358,7 +357,7 @@
                       <div class="flex flex-col">
                         <label 
                         for="total_floors"
-                        class="text-gray-600 text-sm mb-1">
+                        class="text-gray-200 text-sm mb-1">
                         Total Floors
                         </label>
 
@@ -369,19 +368,19 @@
                         oninput="updateFloorOptions()"
                         min="1" 
                         placeholder="Enter floors" 
-                        class="border rounded-md px-3 py-2 w-40">
+                        class="border rounded-md px-3 py-2 w-40 bg-[#393E46] border-gray-700 ">
                       </div>
                       <div class="flex flex-col">
                         <label 
                         for="floor_Select"
-                        class="text-gray-600 text-sm mb-1">
+                        class="text-gray-200 text-sm mb-1">
                         Property on Floor
                         </label>
 
                         <select 
                         name="your_floor" 
                         id="floor_Select"
-                        class="border rounded-md px-3 py-2 w-40"
+                        class="border rounded-md px-3 py-2 w-40 bg-[#393E46] border-gray-700"
                         >
                           <option value="" selected>
                             Select your floor
@@ -391,30 +390,30 @@
                     </div>
                     <!-- end of floor details -->
                     <!-- start of age of property -->
-                    <div>Age of your property</div>
+                    <div class="mt-2 mb-2">Age of your property</div>
                     <div class="flex space-x-4 mb-2">
-                      <label class="checkbox-label px-4 py-2 border rounded-md cursor-pointer">
+                      <label class="checkbox-label px-4 py-2 border rounded-md cursor-pointer bg-[#393E46] border-gray-700">
                           <input type="checkbox" name="singleSelect" class="hidden" onclick="selectOnlyOne(this)">
                           0-1 years
                       </label>
                       
-                      <label class="checkbox-label px-4 py-2 border rounded-md cursor-pointer">
+                      <label class="checkbox-label px-4 py-2 border rounded-md cursor-pointer bg-[#393E46] border-gray-700">
                           <input type="checkbox" name="singleSelect" class="hidden" onclick="selectOnlyOne(this)">
                           1-5 years
                       </label>
               
-                      <label class="checkbox-label px-4 py-2 border rounded-md cursor-pointer">
+                      <label class="checkbox-label px-4 py-2 border rounded-md cursor-pointer bg-[#393E46] border-gray-700">
                           <input type="checkbox" name="singleSelect" class="hidden" onclick="selectOnlyOne(this)">
                           5-10 years
                       </label>
-                      <label class="checkbox-label px-4 py-2 border rounded-md cursor-pointer">
+                      <label class="checkbox-label px-4 py-2 border rounded-md cursor-pointer bg-[#393E46] border-gray-700">
                           <input type="checkbox" name="singleSelect" class="hidden" onclick="selectOnlyOne(this)">
                           10 + years
                       </label>
                   </div>
                   <!-- end of age of property  -->
                   <label for="rent_price">Expected Rent</label>
-                  <input type="number" id="rent_price" min="0" name="rent_price">
+                  <input type="number" id="rent_price" min="0" name="rent_price" class="bg-[#393E46] border-gray-700">
                 </div>
                 <!-- end of step 3 -->
                 <!-- Step 4 -->
@@ -423,38 +422,38 @@
                       <label class="block mb-2">Bedroom</label>
                       <input 
                       type="file" 
-                      class="w-full p-2 border rounded mb-4"
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700"
                       name="bedroom_1">
                       <label class="block mb-2">2nd Bedroom(optional)</label>
                       <input 
                       type="file" 
-                      class="w-full p-2 border rounded mb-4"
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700"
                       name="bedroom_2">
                       <label class="block mb-2">Kitchen</label>
                       <input 
                       type="file" 
-                      class="w-full p-2 border rounded mb-4"
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700"
                       name="kitchen"
                       >
                       <label class="block mb-2">Balcony</label>
                       <input 
                       type="file" 
-                      class="w-full p-2 border rounded mb-4"
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700"
                       name="balcony">
                       <label class="block mb-2">Bathroom</label>
                       <input 
                       type="file" 
-                      class="w-full p-2 border rounded mb-4"
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700"
                       name="bathroom">
                       <label class="block mb-2">Hall</label>
                       <input 
                       type="file" 
-                      class="w-full p-2 border rounded mb-4"
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700"
                       name="hall">
                       <label class="block mb-2">Upload Video</label>
                       <input 
                       type="file" 
-                      class="w-full p-2 border rounded mb-4"
+                      class="w-full p-2 border rounded mb-4 bg-[#393E46] border-gray-700"
                       name="video">
                 </div>
                 <!-- end of step 4 -->
@@ -546,13 +545,13 @@
                     <button 
                     type="button" 
                     id="nextBtn" 
-                    class="px-4 py-2 bg-blue-500 text-white rounded">Continue</button>
+                    class="px-4 py-2 bg-[#00ADb5] text-white rounded">Continue</button>
                 </div>
                 <div class="flex justify-between mt-6">
                     <button 
                     type="submit" 
                     id="submitBtn" 
-                    class="px-4 py-2 bg-blue-500 text-white rounded hidden">Submit</button>
+                    class="px-4 py-2 bg-[#00ADb5]  text-white rounded hidden">Submit</button>
                 </div>
             </form>
         </div>
@@ -572,8 +571,8 @@
             // one more logic we have to add is ki if you have already visited and filled the proper things then that step should be blue sagar will be add this 
             document.querySelectorAll(".step-item").forEach((item, index) => {
                 const circle = item.querySelector(".step-circle");
-                circle.classList.remove("bg-blue-500", "bg-gray-300");
-                circle.classList.add(index + 1 <= step ? "bg-blue-500" : "bg-gray-300");
+                circle.classList.remove("bg-sky-400", "bg-gray-300");
+                circle.classList.add(index + 1 <= step ? "bg-sky-400" : "bg-gray-300");
             });
 
             // Handle button visibility
