@@ -14,10 +14,10 @@
 <body>
   <div class="min-h-screen bg-[#222831] text-white py-40">
     <div class="container mx-auto ">
-      <div class="flex w-8/12 bg-[#222831] border-gray-500 rounded-xl mx-auto shadow-xl overflow-hidden items-center justify-center">
+      <div class="flex w-8/12 bg-[#393E46] border-gray-500 rounded-xl mx-auto shadow-xl overflow-hidden items-center justify-center">
         <!-- image -->
         <div class="w-1/2 md:block hidden">
-          <img class="rounded-2xl mx-4 h-full" src="login.jpg" alt="" />
+          <img class="rounded-2xl m-4 h-full " src="login.jpg" alt="" />
         </div>
         <!-- Register Form -->
         <div class="p-8 rounded-lg w-full h-full flex">
@@ -30,18 +30,20 @@
                 Back
               </button>
 
+              
               <div class="step" id="step-1">
-                <h2 class="text-lg font-bold mb-4">Enter Email Id and Verify</h2>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="u_email" required class="border rounded px-2 py-1 w-full">
+                <h2 class="text-lg font-bold mb-4 text-[#0ACFC7]">Enter Email and Verify</h2>
+                <label for="email" ">Email:</label>
+                <input type="email" id="email" name="u_email" required class="border rounded px-2 py-1 w-full border-gray-700 bg-[#222831]">
                 <button id="sendOtpBtn" class="bg-[#00ADB5] text-white mt-2 px-4 py-1 rounded w-full" type="button">Send OTP</button>
 
                 <div id="otp-section" class="hidden mt-4">
-                  <label for="otp" class="block text-black">Enter OTP:</label>
-                  <input type="text" id="otp" class="border p-2 w-full rounded mb-2">
-                  <button id="verifyOtpBtn" class="bg-green-500 text-white px-4 py-2 rounded w-full" type="button">Verify OTP</button>
+                  <label for="otp" class="block text-white">Enter OTP:</label>
+                  <input type="text" id="otp" class="border p-1 w-full rounded mb-2 border-gray-700 bg-[#222831]">
+                  <button id="verifyOtpBtn" class="bg-green-500 text-white px-4 py-1 rounded w-full" type="button">Verify OTP</button>
                 </div>
               </div>
+          
               
 
               <div class="step" id="step-2">
@@ -108,11 +110,11 @@
               <!-- end of step 5 -->
               <!-- Navigation buttons continue and submit where submit is hidden by default-->
               <div class="flex justify-between mt-6">
-                <button type="button" id="nextBtn" class="px-4 py-2 bg-[#00ADB5] text-white rounded">Continue</button>
+                <button type="button" id="nextBtn" class="px-4 py-1 bg-[#00ADB5] text-white rounded">Continue</button>
               </div>
               <div class="flex justify-between mt-6">
                 <button type="submit" id="submitBtn"
-                  class="px-4 py-2 bg-[#00ADB5] text-white rounded hidden">Submit</button>
+                  class="px-4 py-1 bg-[#00ADB5] text-white rounded hidden">Submit</button>
               </div>
 
             </form>

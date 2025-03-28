@@ -7,39 +7,39 @@
     <title>Login Screen</title>
   </head>
   <body>
-    <section class="bg-zinc-50 min-h-screen flex items-center justify-center">
+    <section class="bg-[#222831] min-h-screen flex items-center justify-center">
       <!-- Login Container -->
       <div
-        class="bg-zinc-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center"
+        class="bg-[#393E46] flex rounded-2xl shadow-lg max-w-3xl p-5 items-center"
       >
         <!-- form -->
         <div class="md:w-1/2 md:pr-10">
-          <h2 class="font-bold text-2xl text-[#145DA0]">Login</h2>
-          <p class="text-[13px] mt-1 text-[#145DA0]">
+          <h2 class="font-bold text-2xl text-[#0ACFC7]">Login</h2>
+          <p class="text-[13px] mt-1 text-[#00ADB5]">
             If already registered , easily log in
           </p>
 
           <form class="flex flex-col gap-4" th:action="@{/doLogin}" method="post">
             <input
-              class="p-2 mt-5 rounded-xl border"
+              class="p-2 mt-5 rounded-xl border border-gray-700 bg-[#222831]"
               type="text"
               name="email"
               placeholder="Email"
               id="email"
             />
-            <button id="sendOtpBtn" class="bg-blue-500 text-white px-4 py-2 rounded w-full" type="button">Send OTP</button>
+            <button id="sendOtpBtn" class="bg-[#00ADB5] text-white px-4 py-1 rounded-xl w-full" type="button">Send OTP</button>
             <div id="otp-section" class="hidden mt-4">
-              <label for="otp" class="block">Enter OTP:</label>
-              <input type="text" id="otp" class="border p-2 w-full rounded mb-2" name="otp">
-              <button id="verifyOtpBtn" class="bg-green-500 text-white px-4 py-2 rounded w-full" type="submit">Verify OTP</button>
+              <label for="otp" class="block text-white  ">Enter OTP:</label>
+              <input type="text" id="otp" class="border p-1 w-full rounded-xl mb-2 border-gray-700 bg-[#222831]" name="otp" >
+              <button id="verifyOtpBtn" class="bg-green-500 text-white px-4 py-1 rounded-xl w-full" type="submit">Verify OTP</button>
             </div>
 
           </form>
 
-          <div class="mt-1 text-xs flex justify-between items-center">
-            <p>Don't have an account?</p>
+          <div class="mt-1 text-xs flex justify-between items-center  ">
+            <p class="text-[#00ADB5]">Don't have an account?</p>
             <button
-              class="py-2 bg-gray-100 rounded-xl hover:scale-110 text-[#145DA0] font-bold"
+              class="py-2 bg-[#393E46] rounded-xl hover:scale-110 text-[#0ACFC7] font-bold"
             >
               Register
             </button>
@@ -48,7 +48,7 @@
 
         <!-- Image -->
         <div class="w-1/2 md:block hidden">
-          <img class="rounded-2xl" th:src="@{/img/login.jpg}" alt="img" />
+          <img class="rounded-2xl" src="login.jpg" alt="img" />
         </div>
       </div>
     </section>
